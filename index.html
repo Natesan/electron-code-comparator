@@ -1,9 +1,31 @@
-<html>
-    <head>
-        <title>Code Comparator</title>
-    </head>
-    <body>
-        <h1>Welcome to Code Comparator!</h1>
-        <p>Comparator renderer</p>
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Code Comparator</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Reem+Kufi|Roboto:300">
+    <link href="https://unpkg.com/ionicons@4.1.2/dist/css/ionicons.min.css" rel="stylesheet">
+
+    <script src="index.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header pt-5">
+            <h1>Welcome to Code Comparator!</h1>
+            <p>Compare files in directories</p>
+        </div>
+        <div class="source">
+            <input type="button" value="Choose a source folder" id="source-folder" />
+            <p id="source-folder-value"></p>
+        </div>
+        <div class="destination">
+            <input type="button" value="Choose a destination folder" id="destination-folder" />
+            <p id="destination-folder-value"></p>
+        </div>
+    </div>
+</body>
+
 </html>
