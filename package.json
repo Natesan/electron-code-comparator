@@ -1,0 +1,30 @@
+{
+  "name": "electron-code-comparator",
+  "version": "1.0.0",
+  "description": "Code Comparator App for Windows/MAC/Linux",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Natesan/electron-code-comparator.git"
+  },
+  "keywords": [
+    "code",
+    "comparator",
+    "cross",
+    "platform",
+    "app"
+  ],
+  "author": "natesan.sivagnanam",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Natesan/electron-code-comparator/issues"
+  },
+  "homepage": "https://github.com/Natesan/electron-code-comparator#readme",
+  "dependencies": {
+    "electron": "^3.0.3"
+  }
+}
