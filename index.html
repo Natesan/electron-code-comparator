@@ -17,13 +17,19 @@
             <h1>Welcome to Code Comparator!</h1>
             <p>Compare files in directories</p>
         </div>
-        <div class="source">
-            <input type="button" value="Choose a source folder" id="source-folder" />
-            <p id="source-folder-value"></p>
+        <div class="source py-3">
+            <input type="button" value="Choose a source folder" id="source-folder" class="btn btn-outline-dark"/>
+            <span class="" id="source-folder-value"></span>
         </div>
-        <div class="destination">
-            <input type="button" value="Choose a destination folder" id="destination-folder" />
-            <p id="destination-folder-value"></p>
+        <div class="destination py-3">
+            <input type="button" value="Choose a destination folder" id="destination-folder" class="btn btn-outline-dark"/>
+            <span class="" id="destination-folder-value"></span>
+        </div>
+        <div class="compare-button py-3">
+            <button type="button" id="compare-button" class="btn btn-outline-success">Compare</button>
+        </div>
+        <div class="result py-2">
+            <p id="result"></p>
         </div>
     </div>
 </body>
