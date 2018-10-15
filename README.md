@@ -1,2 +1,10 @@
 # electron-code-comparator
-Electron Cross Platform App for Code Comparison
+**App to run code comparison across directories real quick.**
+
+Cross Platform Code Comparison application built using Electron
+
+## How to use
+To be updated..
+
+## License
+MIT License
