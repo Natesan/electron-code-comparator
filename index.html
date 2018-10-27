@@ -28,13 +28,10 @@
         <div class="compare-button py-2 px-3">
             <button type="button" id="compare-button" class="btn btn-outline-success">Compare</button>
         </div>
-        <!-- <div class="result py-2">
-            <p id="result"></p>
-        </div> -->
 
         <div class="pt-3">
-            <h3>Summary</h3>
-            <div id="summary" class="py-3 px-3">
+            <div id="summary" class="py-3 px-3 d-none">
+                <h3>Summary</h3>
                 <ul class="list-group">
                     <li id="summaryFilesMatched" class="list-group-item list-group-item-primary d-flex justify-content-between align-items-center">
                         Files Matched
@@ -51,9 +48,18 @@
                 </ul>
             </div>
         </div>
+
         <div class="pt-3">
-            <h3>Details</h3>
-            <div id="details" class="py-3 px-3">
+            <div id="difference" class="py-3 px-3 d-none">
+                <h3>Consolidated Difference</h3>
+                <h5 class="d-inline-block">Download the difference file
+                    <a href="download/diff.patch" target="_blank" download="diff.patch">here</a>.</h5>
+            </div>
+        </div>
+
+        <div class="pt-3">
+            <div id="details" class="py-3 px-3 d-none">
+                <h3>Details</h3>
                 <div>
                     <h5>Files Matched</h5>
                     <ul id="detailsFilesMatched" class="list-group"></ul>
@@ -72,13 +78,6 @@
             </div>
         </div>
 
-        <div class="pt-3">
-            <h3>Consolidated Difference</h3>
-            <div id="difference" class="py-3 px-3">
-                <h5 class="d-inline-block">Download the difference file
-                <a href="download/diff.patch" target="_blank" download="diff.patch">here</a>.</h5>
-            </div>
-        </div>
     </div>
 </body>
 
