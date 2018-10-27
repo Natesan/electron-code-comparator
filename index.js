@@ -64,6 +64,24 @@ function printFolderName(folderName, targetElement) {
 function initializeComparison(src, dest) {
     compare.initializeComparison(src, dest, function(result){
         $('#result').text(result.reportContent);
+        $('#summary').find('#summaryFilesMatched').find('span').text(result.filesMatched.length);
+        $('#summary').find('#summaryFilesAdded').find('span').text(result.filesAddedDestination.length);
+        $('#summary').find('#summaryFilesRemoved').find('span').text(result.filesRemovedSource.length);
+        
+        for(i = 0; i < result.filesMatched.length; i++) {
+            $('#details').find('#detailsFilesMatched').append('<li>' + result.filesMatched[i] + '</li>');
+        }
+        
+        for(i = 0; i < result.filesAddedDestination.length; i++) {
+            $('#details').find('#detailsFilesAdded').append('<li>' + result.filesAddedDestination[i] + '</li>');
+        }
+
+        for(i = 0; i < result.filesRemovedSource.length; i++) {
+            $('#details').find('#detailsFilesRemoved').append('<li>' + result.filesRemovedSource[i] + '</li>');
+        }
+
+        $('#difference').find('#consolidatedDifference').text(result.diffContent);
+
     }.bind(this));
     
 }

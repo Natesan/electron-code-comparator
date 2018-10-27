@@ -13,23 +13,71 @@
 
 <body>
     <div class="container">
-        <div class="header pt-5">
-            <h1>Welcome to Code Comparator!</h1>
+        <div class="header pt-3">
+            <h3>Code Comparator</h3>
             <p>Compare files in directories</p>
         </div>
-        <div class="source py-3">
-            <input type="button" value="Choose a source folder" id="source-folder" class="btn btn-outline-dark"/>
+        <div class="source py-2 px-3">
+            <input type="button" value="Choose a source folder" id="source-folder" class="btn btn-outline-dark" />
             <span class="" id="source-folder-value"></span>
         </div>
-        <div class="destination py-3">
-            <input type="button" value="Choose a destination folder" id="destination-folder" class="btn btn-outline-dark"/>
+        <div class="destination py-2 px-3">
+            <input type="button" value="Choose a destination folder" id="destination-folder" class="btn btn-outline-dark" />
             <span class="" id="destination-folder-value"></span>
         </div>
-        <div class="compare-button py-3">
+        <div class="compare-button py-2 px-3">
             <button type="button" id="compare-button" class="btn btn-outline-success">Compare</button>
         </div>
-        <div class="result py-2">
+        <!-- <div class="result py-2">
             <p id="result"></p>
+        </div> -->
+
+        <div class="pt-3">
+            <h3>Summary</h3>
+            <div id="summary" class="py-3 px-3">
+                <ul class="list-group">
+                    <li id="summaryFilesMatched" class="list-group-item list-group-item-primary d-flex justify-content-between align-items-center">
+                        Files Matched
+                        <span class="badge badge-primary badge-pill"></span>
+                    </li>
+                    <li id="summaryFilesAdded" class="list-group-item list-group-item-success d-flex justify-content-between align-items-center">
+                        Files added in the Destination
+                        <span class="badge badge-primary badge-pill"></span>
+                    </li>
+                    <li id="summaryFilesRemoved" class="list-group-item list-group-item-danger d-flex justify-content-between align-items-center">
+                        Files removed from the Source
+                        <span class="badge badge-primary badge-pill"></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="pt-3">
+            <h3>Details</h3>
+            <div id="details" class="py-3 px-3">
+                <div>
+                    <h5>Files Matched</h5>
+                    <ul id="detailsFilesMatched" class="list-group"></ul>
+                </div>
+
+                <div class="pt-2">
+                    <h5>Files Added</h5>
+                    <ul id="detailsFilesAdded" class="list-group"></ul>
+                </div>
+
+                <div class="pt-2">
+                    <h5>Files Removed</h5>
+                    <ul id="detailsFilesRemoved" class="list-group"></ul>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="pt-3">
+            <h3>Consolidated Difference</h3>
+            <div id="difference" class="py-3 px-3">
+                <h5 class="d-inline-block">Download the difference file
+                <a href="download/diff.patch" target="_blank" download="diff.patch">here</a>.</h5>
+            </div>
         </div>
     </div>
 </body>

@@ -160,12 +160,21 @@ var fnWriteReport = function () {
 
     aDiffContent.forEach((diffItem) => {
         sDiffContent.push("\n\nDifference between '" + diffItem.oldHeader + "' and '" + diffItem.newHeader + "'\n");
-        sDiffContent.push(diffItem.hunks[0].lines);
+        sDiffContent.push(diffItem.hunks[0].lines.join(""));
+    });
+
+    console.log("\nCreating Patch File...");
+    writeFile('download/diff.patch', sDiffContent.join(""), function (err) {
+        if (err) console.log(err);
     });
 
     return {
-        reportContent : sReportContent,
-        diffContent : sDiffContent
+        reportContent: sReportContent,
+        diffContent: sDiffContent,
+        filesMatched: aFinalList,
+        filesAddedDestination: aAddedFileList,
+        filesRemovedSource: aRemovedFileList
+
     };
 }
 
