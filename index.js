@@ -63,25 +63,30 @@ function printFolderName(folderName, targetElement) {
 
 function initializeComparison(src, dest) {
     compare.initializeComparison(src, dest, function(result){
-        $('#result').text(result.reportContent);
+        console.log("Logging Control Back");
+        $('#summary').removeClass('d-none');
         $('#summary').find('#summaryFilesMatched').find('span').text(result.filesMatched.length);
         $('#summary').find('#summaryFilesAdded').find('span').text(result.filesAddedDestination.length);
         $('#summary').find('#summaryFilesRemoved').find('span').text(result.filesRemovedSource.length);
         
-        for(i = 0; i < result.filesMatched.length; i++) {
+        for(i = 0; i < 10; i++) {
+            $('#details').removeClass('d-none');
             $('#details').find('#detailsFilesMatched').append('<li>' + result.filesMatched[i] + '</li>');
         }
         
-        for(i = 0; i < result.filesAddedDestination.length; i++) {
+        for(i = 0; i < 10; i++) {
+            $('#details').removeClass('d-none');
             $('#details').find('#detailsFilesAdded').append('<li>' + result.filesAddedDestination[i] + '</li>');
         }
 
-        for(i = 0; i < result.filesRemovedSource.length; i++) {
+        for(i = 0; i < 10; i++) {
+            $('#details').removeClass('d-none');
             $('#details').find('#detailsFilesRemoved').append('<li>' + result.filesRemovedSource[i] + '</li>');
         }
 
+        $('#difference').removeClass('d-none');
         $('#difference').find('#consolidatedDifference').text(result.diffContent);
-
+        console.log("Logging Done");
     }.bind(this));
     
 }
