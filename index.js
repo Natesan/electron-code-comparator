@@ -69,17 +69,17 @@ function initializeComparison(src, dest) {
         $('#summary').find('#summaryFilesAdded').find('span').text(result.filesAddedDestination.length);
         $('#summary').find('#summaryFilesRemoved').find('span').text(result.filesRemovedSource.length);
         
-        for(i = 0; i < 10; i++) {
+        for(i = 0; i < 10 && result.filesMatched[i]; i++) {
             $('#details').removeClass('d-none');
             $('#details').find('#detailsFilesMatched').append('<li>' + result.filesMatched[i] + '</li>');
         }
         
-        for(i = 0; i < 10; i++) {
+        for(i = 0; i < 10 && result.filesAddedDestination[i]; i++) {
             $('#details').removeClass('d-none');
             $('#details').find('#detailsFilesAdded').append('<li>' + result.filesAddedDestination[i] + '</li>');
         }
 
-        for(i = 0; i < 10; i++) {
+        for(i = 0; i < 10 && result.filesRemovedSource[i]; i++) {
             $('#details').removeClass('d-none');
             $('#details').find('#detailsFilesRemoved').append('<li>' + result.filesRemovedSource[i] + '</li>');
         }
