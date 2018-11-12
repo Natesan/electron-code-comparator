@@ -1,5 +1,6 @@
 {
   "name": "electron-code-comparator",
+  "productName": "Electron Code Comparator",
   "version": "1.0.0",
   "description": "Code Comparator App for Windows/MAC/Linux",
   "main": "app.js",
