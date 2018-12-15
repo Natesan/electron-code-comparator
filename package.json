@@ -5,7 +5,7 @@
   "description": "Code Comparator App for Windows/MAC/Linux",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha",
     "start": "electron ."
   },
   "repository": {
@@ -27,5 +27,9 @@
   "homepage": "https://github.com/Natesan/electron-code-comparator#readme",
   "dependencies": {
     "electron": "^3.0.3"
+  },
+  "devDependencies": {
+    "mocha": "^5.2.0",
+    "spectron": "^5.0.0"
   }
 }
