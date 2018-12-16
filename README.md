@@ -18,5 +18,8 @@ Consolidated patch of all the differences in similar files can be downloaded as 
 - Select the directories and compare
 - Download the difference patch file
 
+## Development
+- To execute tests run 'npm test' in the electron-code-comparator directory
+
 ## License
 MIT License
