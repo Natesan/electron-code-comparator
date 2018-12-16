@@ -12,6 +12,7 @@ $(document).ready(() => {
 
     $('#source-folder').on('click', (event) => {
         console.log("***Source Directory***");
+        $('.alert').addClass('d-none');
         dialog.showOpenDialog({
             title: "Select the Source Folder",
             properties: ["openDirectory"]
@@ -30,6 +31,7 @@ $(document).ready(() => {
 
     $('#destination-folder').on('click', (event) => {
         console.log("***Destination Directory***");
+        $('.alert').addClass('d-none');
         dialog.showOpenDialog({
             title: "Select the Destination Folder",
             properties: ["openDirectory"]
@@ -52,7 +54,8 @@ $(document).ready(() => {
             reset();
             initializeComparison(sourceDirectory[0], destinationDirectory[0]);
         } else {
-            alert("Please select both the directories.")
+            $('.alert').removeClass('d-none');
+            $('.alert').find('#alertText').text("Please select both the directories.");
         }
     });
 
@@ -95,6 +98,7 @@ function initializeComparison(src, dest) {
 function reset() {
     $('#details').addClass('d-none');
     $('#difference').addClass('d-none');
+    $('.alert').addClass('d-none');
 
     $('#summary').find('#summaryFilesMatched').find('span').text(0);
     $('#summary').find('#summaryFilesAdded').find('span').text(0);
