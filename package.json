@@ -26,6 +26,8 @@
   },
   "homepage": "https://github.com/Natesan/electron-code-comparator#readme",
   "dependencies": {
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
     "electron": "^3.0.3"
   },
   "devDependencies": {
