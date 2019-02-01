@@ -136,11 +136,11 @@ var fnWriteReport = function () {
 
     aDiffContent.forEach((diffItem) => {
         sDiffContent.push(`\n\nDifference between ${diffItem.oldHeader} and ${diffItem.newHeader} \n`);
-        sDiffContent.push(diffItem.hunks[0].lines.join(""));
+        sDiffContent.push(diffItem.hunks[0].lines.join("\n"));
     });
 
     console.log(`\nCreating Patch File...`);
-    writeFile('download/diff.patch', sDiffContent.join(""), function (err) {
+    writeFile('download/diff.patch', sDiffContent.join("\n"), function (err) {
         if (err) console.log(err);
     });
 
