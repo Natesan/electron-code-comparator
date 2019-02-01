@@ -4,7 +4,7 @@ const chai = require('chai');
 const chaiAsPromised = require('chai-as-promised');
 const electronPath = require('electron');
 
-describe('Application Launch', function(){
+describe('Application Launch', function() {
     this.timeout(10000);
 
     before(function(){
@@ -26,7 +26,7 @@ describe('Application Launch', function(){
         }
     });
 
-    it('tests the title', function(){
+    it('tests the title', function() {
         return this.app.client.waitUntilWindowLoaded().getTitle().should.eventually.equal('Code Comparator');
     });
 
@@ -45,7 +45,7 @@ describe('Application Launch', function(){
         .element('#compare-button').getText().should.eventually.equal('Compare');
     });
 
-    it('should perform null checks for source and destination folder selectors', function(){
+    it('should perform null checks for source and destination folder selectors', function() {
         return this.app.client
             .element('#compare-button').click()
             .element('#alertText').getText().should.eventually.equal('Please select both the directories.');
