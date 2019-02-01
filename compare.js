@@ -144,6 +144,19 @@ var fnWriteReport = function () {
         if (err) console.log(err);
     });
 
+    console.log(`\nCreating Report Files...`);
+    writeFile('download/filesMatched.txt', aFinalList.sort().join("\n"), function(err){
+        if (err) console.log(err);
+    });
+
+    writeFile('download/filesAddedDestination.txt', aAddedFileList.sort().join("\n"), function(err){
+        if (err) console.log(err);
+    });
+
+    writeFile('download/filesRemovedSource.txt', aRemovedFileList.sort().join("\n"), function(err){
+        if (err) console.log(err);
+    });
+
     return {
         reportContent: sReportContent,
         diffContent: sDiffContent,
