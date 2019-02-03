@@ -52,6 +52,7 @@ $(document).ready(() => {
     $('#compare-button').on('click', (event) => {
         if (sourceDirectory && destinationDirectory) {
             reset();
+            $('.loadingIndicator').removeClass('d-none');
             initializeComparison(sourceDirectory[0], destinationDirectory[0]);
         } else {
             $('.alert').removeClass('d-none');
@@ -69,6 +70,7 @@ function initializeComparison(src, dest) {
     compare.initializeComparison(src, dest, function (result) {
         console.log("Logging Control Back");
         $('#summary').removeClass('d-none');
+        $('.loadingIndicator').addClass('d-none');
         $('#summary').find('#summaryFilesMatched').find('span').text(result.filesMatched.length);
         $('#summary').find('#summaryFilesAdded').find('span').text(result.filesAddedDestination.length);
         $('#summary').find('#summaryFilesRemoved').find('span').text(result.filesRemovedSource.length);
