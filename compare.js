@@ -23,20 +23,18 @@ var fnInitialize = function (srcDir, tarDir, fnCallBack) {
     fnResetContent();
 
     sourceSettings = {
-        root: srcDir,
-        entryType: 'files',
+        type: 'files',
         filter: '*.js'
     };
 
     targetSettings = {
-        root: tarDir,
-        entryType: 'files',
+        type: 'files',
         filter: '*.js'
     };
 
-    fnAsyncDirectoryRead(sourceSettings).then(function (result) {
+    fnAsyncDirectoryRead(srcDir, sourceSettings).then(function (result) {
         aSourceFileList = result;
-        fnAsyncDirectoryRead(targetSettings).then(function (result) {
+        fnAsyncDirectoryRead(tarDir, targetSettings).then(function (result) {
             aTargetFileList = result;
 
             fnCompareFileList(aSourceFileList, aTargetFileList);
@@ -87,9 +85,9 @@ var fnCompareFileContent = function (srcDir, tarDir) {
     });
 }
 
-var fnAsyncDirectoryRead = function (settings) {
+var fnAsyncDirectoryRead = function (root, settings) {
     return new Promise(function (resolve, reject) {
-        readdirp(settings)
+        readdirp(root, settings)
             .on('data', function (entry) {
                 aFileList.push(entry.path);
             })
