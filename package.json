@@ -27,7 +27,7 @@
   "homepage": "https://github.com/Natesan/electron-code-comparator#readme",
   "dependencies": {
     "electron": "5.0.3",
-    "jquery": "3.4.1",
+    "jquery": "^3.5.1",
     "readdirp": "3.0.2",
     "write": "1.0.3"
   },
