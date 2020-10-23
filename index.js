@@ -16,14 +16,14 @@ $(document).ready(() => {
         dialog.showOpenDialog({
             title: "Select the Source Folder",
             properties: ["openDirectory"]
-        }, (folderPaths) => {
-            if (folderPaths === undefined) {
+        }).then((paths) => {
+            if (paths === undefined) {
                 console.log("***No Source Folder Selected***");
                 return;
             } else {
-                sourceDirectory = folderPaths;
-                console.log(folderPaths);
-                printFolderName(folderPaths, 'source-folder-value');
+                sourceDirectory = paths.filePaths;
+                console.log(sourceDirectory);
+                printFolderName(sourceDirectory, 'source-folder-value');
             }
         });
 
@@ -35,14 +35,14 @@ $(document).ready(() => {
         dialog.showOpenDialog({
             title: "Select the Destination Folder",
             properties: ["openDirectory"]
-        }, (folderPaths) => {
-            if (folderPaths === undefined) {
+        }).then((paths) => {
+            if (paths === undefined) {
                 console.log("***No Destination Folder Selected***");
                 return;
             } else {
-                destinationDirectory = folderPaths;
-                console.log(folderPaths);
-                printFolderName(folderPaths, 'destination-folder-value');
+                destinationDirectory = paths.filePaths;
+                console.log(destinationDirectory);
+                printFolderName(destinationDirectory, 'destination-folder-value');
             }
         });
 
